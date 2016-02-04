@@ -1,0 +1,12 @@
+name = "Hugo Skeleton"
+license = "MIT"
+licenselink = "https://github.com/saviomuc/hugo-skeleton/blob/master/LICENSE.md"
+description = "Skeleton for rapid development with hugo"
+homepage = "http://vanhoi.com/"
+tags = ["", ""]
+features = ["", ""]
+min_version = 0.14
+
+[author]
+  name = "Savio van Hoi"
+  homepage = "http://vanhoi.com"
