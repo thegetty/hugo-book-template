@@ -15,7 +15,7 @@
 - Boilerplate for SASS code organization inspired by the [Sass Guidelines project](http://sass-guidelin.es/#architecture).
 - No over-engineering.
 
-## Who should use it
+## Who you should use it
  - You want to quickly create websites or prototypes.
  - You think Hugo is really good at generating static sites but lacks an asset pipeline.
  - You are comfortable with Gulp as a task runner but don't want to spend too much time configuring it.
