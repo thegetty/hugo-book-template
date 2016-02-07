@@ -1,17 +1,35 @@
 {{ partial "header.html" . }}
 
-  <h1>Articles</h1>
+<div class="container">
+
+  <h1 class="index-headline">Hugo Skeleton</h1>
+  <h2 class="index-subheadline">A simple theme for rapid website development with Hugo, SASS and gulp.</h2>
+
+<p>
+ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis nostrum dignissimos et omnis explicabo alias delectus. Modi repellendus, nobis voluptatibus ducimus provident fugiat repellat sunt perspiciatis, consequuntur labore, soluta eligendi!
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores expedita labore eaque suscipit perspiciatis nihil laboriosam dolorum minus eos repudiandae id accusantium esse, natus consectetur, voluptas sit facere, recusandae nobis.
+</p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit eaque, soluta, autem officiis distinctio. Doloribus ea consectetur et facilis, iure, animi placeat. Magni cum magnam perferendis sequi sed repellendus.</p>
+<section class="index-articles">
+  <h2>Articles</h2>
   {{ range first 10 .Data.Pages }}
     {{ if eq .Type "article"}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ end }}
   {{ end }}
+</section>
 
-  <h1>Pages</h1>
+<section class="index-pages">
+  <h2>Pages</h2>
   {{ range first 10 .Data.Pages }}
     {{ if eq .Type "page"}}
       <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
     {{ end }}
   {{ end }}
+</section>
+
+
+  </div>
 
 {{ partial "footer.html" . }}

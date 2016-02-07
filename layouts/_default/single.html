@@ -1,7 +1,11 @@
 {{ partial "header.html" . }}
 
+<div class="container">
+
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p><a href="{{ .Site.BaseURL }}">Home</a></p>
+
+</div>
 
 {{ partial "footer.html" . }}

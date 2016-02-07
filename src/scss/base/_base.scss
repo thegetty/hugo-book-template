@@ -1,1 +1,10 @@
-// basic styles for all pages. Usually can be replaced by normalizer
+// =============================================================================
+// _base.scss
+// -----------------------------------------------------------------------------
+// Basic Styles for all pages
+// =============================================================================
+
+.container {
+  @include outer-container;
+//  @include debugShowVerticalGrid;
+}

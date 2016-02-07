@@ -1,1 +1,37 @@
-// Base typography and fonts
+// =============================================================================
+// _typography.scss
+// -----------------------------------------------------------------------------
+// Basic Typography for all pages
+// =============================================================================
+html {
+  background-color: #fff;
+  color: $greynavy;
+  font-size: $base-font-size;
+}
+
+h1 {
+  font-family: $sourcesans;
+  text-transform: uppercase;
+  @include setFontToBaseline(48px,1,1);
+}
+
+h2 {
+  font-family: $opensans;
+  text-transform: uppercase;
+  @include setFontToBaseline(24px,1,1);
+}
+
+p {
+  font-family: $opensans;
+  @include setFontToBaseline(16px,1,1);
+}
+
+a {
+  text-decoration: none;
+  color: $greynavy;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(198, 232, 248, 0) 75%, rgba(192, 230, 247, 1) 83%, rgba(192, 230, 247, 1) 94%, rgba(184, 226, 245, 1) 95%, rgba(184, 226, 245, 1) 97%, rgba(184, 226, 245, 0) 100%);
+  transition: background-color 0.1s linear;
+  &:hover {
+    background-color: #b8e2f5;
+  }
+}

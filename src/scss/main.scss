@@ -1,16 +1,21 @@
-// This file is ONLY for imports and comments!
+// =============================================================================
+// main.scss
+// -----------------------------------------------------------------------------
+// Entry point to transpile to main.css.
+// Only for imports and comments!
+// =============================================================================
 
-// Utilities
-@import 'utils/vars';
-@import 'utils/functions';
-@import 'utils/mixins';
-
-// Vendor Styles
+// 3rd Party
+@import "vendor/bourbon/bourbon";
+@import "vendor/neat/neat";
 @import 'vendor/normalize';
+
+// 1st Party
+@import 'utils/settings';
+@import 'utils/verticalrythm';
 
 // Base Styles
 @import 'base/base';
-@import 'base/helpers';
 @import 'base/typography';
 
 // Layout Styles
@@ -18,8 +23,7 @@
 @import 'layout/header';
 
 // Page Styles
-@import 'page/about';
+@import 'pages/index';
 
 // Component Styles
-@import 'components/buttons';
-@import 'components/navigation';
+// Buttons, Navigations, etc.

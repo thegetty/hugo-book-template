@@ -1,8 +1,12 @@
 {{ partial "header.html" . }}
 
+<div class="container">
+
   {{ range first 10 .Data.Pages }}
     <h1><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
   {{ end }}
   <p><a href="{{ .Site.BaseURL }}">Home</a></p>
+
+</div>
 
 {{ partial "footer.html" . }}

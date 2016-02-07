@@ -38,6 +38,6 @@ gulp.task('js',function(){
 });
 
 gulp.task('default', ['css', 'js' ], function () {
-    gulp.watch("src/scss/*.scss", ['css']);
+    gulp.watch("src/scss/**/*.scss", ['css']);
     gulp.watch("src/js/*.js", ['js']);
 });
