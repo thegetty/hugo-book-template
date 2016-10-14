@@ -10,19 +10,19 @@ html {
 }
 
 h1 {
-  font-family: $sourcesans;
+  font-family: $lato;
   text-transform: uppercase;
   @include setFontToBaseline(48px,1,1);
 }
 
 h2 {
-  font-family: $opensans;
+  font-family: $lato;
   text-transform: uppercase;
   @include setFontToBaseline(24px,1,1);
 }
 
 p {
-  font-family: $opensans;
+  font-family: $merriweather;
   @include setFontToBaseline(16px,1,1);
 }
 

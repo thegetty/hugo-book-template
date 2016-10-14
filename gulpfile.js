@@ -14,6 +14,10 @@ const PATH = {
   JS: {
     src: 'src/js/scripts.js',
     dest: 'static/js'
+  },
+  FONTS: {
+    src: 'src/fonts/*',
+    dest: 'static/fonts'
   }
 };
 
@@ -27,7 +31,7 @@ gulp.task('css', function () {
     .pipe(gulp.dest(PATH.CSS.dest))
 });
 
-gulp.task('js',function(){
+gulp.task('js',function() {
   gulp.src(PATH.JS.src)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
@@ -37,7 +41,13 @@ gulp.task('js',function(){
     .pipe(gulp.dest(PATH.JS.dest))
 });
 
-gulp.task('default', ['css', 'js' ], function () {
-    gulp.watch("src/scss/**/*.scss", ['css']);
-    gulp.watch("src/js/*.js", ['js']);
+gulp.task('fonts', function() {
+  gulp.src(PATH.FONTS.src)
+    .pipe(gulp.dest(PATH.FONTS.dest))
+});
+
+gulp.task('default', ['css', 'js', 'fonts' ], function () {
+  gulp.watch("src/scss/**/*.scss", ['css']);
+  gulp.watch("src/js/*.js", ['js']);
+  gulp.watch("src/fonts/*", ['fonts']);
 });

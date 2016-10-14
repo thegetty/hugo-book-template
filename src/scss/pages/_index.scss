@@ -2,14 +2,17 @@
   @include span-columns(12);
   text-align: center;
 }
+
 .index-subheadline {
   @include span-columns(12);
   text-align: center;
 }
+
 .index-articles {
   @include span-columns(6);
   text-align: center;
 }
+
 .index-pages {
   @include span-columns(6);
   text-align: center;

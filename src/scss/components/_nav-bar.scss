@@ -1,0 +1,27 @@
+// scss-lint:disable SelectorFormat
+
+// Nav-Bar Component
+.nav-bar {
+  background-color: $nav-bar-background;
+  color: $nav-bar-color;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: $nav-bar-height;
+  justify-content: space-between;
+  line-height: $nav-bar-height;
+}
+
+.nav-bar__left {
+  @include flex(3)
+}
+
+.nav-bar__center {
+  @include flex(1 0 auto);
+  text-align: center;
+}
+
+.nav-bar__right {
+  @include flex(3)
+}
+
