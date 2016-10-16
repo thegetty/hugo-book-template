@@ -1,3 +1,6 @@
 node_modules/
-static/css/
-static/js/
+
+# Add compiled assets to source so that Gulp etc is only required for
+# theme development, not for ordinary use.
+# static/css/
+# static/js/
