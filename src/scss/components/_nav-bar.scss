@@ -1,27 +1,66 @@
 // scss-lint:disable SelectorFormat
 
 // Nav-Bar Component
+$nav-bar-icon-size: 24px;
+$nav-bar-font-family: $heading-font-family;
+
 .nav-bar {
   background-color: $nav-bar-background;
   color: $nav-bar-color;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  font-family: $nav-bar-font-family;
+  font-size: $base-font-size * 0.85;
   height: $nav-bar-height;
   justify-content: space-between;
   line-height: $nav-bar-height;
 }
 
 .nav-bar__left {
-  @include flex(3)
+  @include flex(1)
 }
 
 .nav-bar__center {
-  @include flex(1 0 auto);
+  display: flex;
+  flex: 3 0 auto;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-bar__center__info {
+  margin: 0 $base-spacing;
   text-align: center;
 }
 
 .nav-bar__right {
-  @include flex(3)
+  flex: 1;
+  margin-right: $base-spacing;
+  text-align: right;
+}
+
+// Icon styles
+
+.nav-bar__prev-link {
+  @extend .ion-chevron-left;
+  @extend .mobile-hide;
+  font-size: $nav-bar-icon-size * 0.75;
+}
+
+.nav-bar__next-link {
+  @extend .ion-chevron-right;
+  @extend .mobile-hide;
+  font-size: $nav-bar-icon-size * 0.75;
+}
+
+.nav-bar__breadcrumb {
+  @extend .ion-android-arrow-dropright;
+  @extend .mobile-hide;
+  margin: 0 $small-spacing;
+}
+
+.nav-bar__menu__icon {
+  @extend .ion-navicon;
+  font-size: $nav-bar-icon-size * 1.5;
 }
 

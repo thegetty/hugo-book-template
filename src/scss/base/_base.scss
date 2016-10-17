@@ -6,5 +6,5 @@
 
 .container {
   @include outer-container;
-//  @include debugShowVerticalGrid;
+  max-width: $large-screen;
 }

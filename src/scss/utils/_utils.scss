@@ -1,0 +1,4 @@
+.mobile-hide {
+  @include media($small-screen) { display: none; }
+}
+

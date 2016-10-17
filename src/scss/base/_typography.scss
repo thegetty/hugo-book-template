@@ -3,35 +3,39 @@
 // -----------------------------------------------------------------------------
 // Basic Typography for all pages
 // =============================================================================
-html {
+body {
+  @include font-feature-settings("kern", "liga", "pnum");
   background-color: #fff;
-  color: $greynavy;
+  color: $base-font-color;
+  font-family: $base-font-family;
   font-size: $base-font-size;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  line-height: $base-line-height;
 }
 
 h1 {
-  font-family: $lato;
-  text-transform: uppercase;
-  @include setFontToBaseline(48px,1,1);
+  font-family: $heading-font-family;
 }
 
 h2 {
-  font-family: $lato;
-  text-transform: uppercase;
-  @include setFontToBaseline(24px,1,1);
+  font-family: $heading-font-family;
+}
+
+h3 {
+  font-family: $heading-font-family;
 }
 
 p {
-  font-family: $merriweather;
-  @include setFontToBaseline(16px,1,1);
+  font-family: $base-font-family;
 }
 
 a {
+  color: $action-color;
   text-decoration: none;
-  color: $greynavy;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(198, 232, 248, 0) 75%, rgba(192, 230, 247, 1) 83%, rgba(192, 230, 247, 1) 94%, rgba(184, 226, 245, 1) 95%, rgba(184, 226, 245, 1) 97%, rgba(184, 226, 245, 0) 100%);
-  transition: background-color 0.1s linear;
+  transition: color 0.1s linear;
+
   &:hover {
-    background-color: #b8e2f5;
+    color: darken($action-color, 35%);
   }
 }

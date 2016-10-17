@@ -3,9 +3,44 @@
   </div>
 
   <div class="nav-bar__center">
-    {{ .Title }} &middot; {{ .Site.Title }}
+    {{ if .IsHome }}
+      <div class="nav-bar__center__info">
+        <a class="nav-bar__site-title" href="{{ .Site.BaseURL }}">
+          {{ .Site.Title }}
+        </a>
+      </div>
+    <!-- Home page version -->
+    {{ else }}
+    <!-- Content page version -->
+      {{ if .Prev }}
+        <a class="" href="{{ .Prev.Permalink }}">
+          <i class="nav-bar__prev-link"></i>
+        </a>
+      {{ end }}
+
+      <div class="nav-bar__center__info">
+        <a class="nav-bar__site-title" href="{{ .Site.BaseURL }}">
+          {{ .Site.Title }}
+        </a>
+
+        <i class="nav-bar__breadcrumb"></i>
+
+        <span class="nav-bar__page-title">
+          {{ .Title }}
+        </span>
+      </div>
+
+      {{ if .Next }}
+        <a class="" href="{{ .Next.Permalink }}">
+          <i class="nav-bar__next-link"></i>
+        </a>
+      {{ end }}
+    {{ end }}
   </div>
 
   <div class="nav-bar__right">
+    <a id="nav-bar__menu" href="javascript:void(0);">
+      <i class="nav-bar__menu__icon"></i>
+    </a>
   </div>
 </nav>
