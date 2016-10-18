@@ -2,23 +2,7 @@
 {{ partial "nav-bar.html" . }}
 
 <div class="container">
-
-  <section class="index-articles">
-    <h2>Chapters</h2>
-    {{ range where .Data.Pages "Section" "chapters" }}
-      <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-    {{ end }}
-  </section>
-
-  <section class="index-pages">
-    <h2>Pages</h2>
-    <!-- {{ range .Data.Pages }} -->
-    <!-- {{ if eq .Type "page"}} -->
-    <!-- <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2> -->
-    <!-- {{ end }} -->
-    <!-- {{ end }} -->
-  </section>
-
+  {{ partial "sidebar.html" . }}
 </div>
 
 {{ partial "footer.html" . }}

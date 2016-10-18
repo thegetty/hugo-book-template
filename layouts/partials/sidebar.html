@@ -1,0 +1,17 @@
+<div class="sidebar">
+  <div class="sidebar__inner">
+    <div class="sidebar__inner__header">
+      <h2 class="sidebar__title"> {{ .Site.Title }}</h2>
+      <a class="sidebar__close-link" href="">
+        <i class="ion-android-close"></i>
+      </a>
+    </div>
+    <div class="sidebar__inner__content">
+      <ul class="sidebar__inner__content__toc">
+        {{ range where .Site.Pages "Section" "chapters" }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>
