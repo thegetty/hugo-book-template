@@ -1,8 +1,13 @@
 {{ partial "header.html" . }}
 {{ partial "nav-bar.html" . }}
+{{ partial "sidebar.html" . }}
+{{ partial "cover.html" . }}
 
 <div class="container">
-  {{ partial "sidebar.html" . }}
+{{ range .Site.Pages }}
+  {{ if eq .Type "index" }} {{ .Content }} {{ end }}
+{{ end }}
+  <a class="button" href="./chapters/">Start Reading</a>
 </div>
 
 {{ partial "footer.html" . }}

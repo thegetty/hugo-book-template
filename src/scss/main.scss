@@ -6,20 +6,18 @@
 // =============================================================================
 
 // 3rd Party
+@import "vendor/normalize";
 @import "vendor/bourbon/bourbon";
 @import "vendor/neat/neat";
-@import "vendor/normalize";
 @import "vendor/ionicons/ionicons";
 
 // 1st Party
 @import "utils/fonts";
-@import "utils/settings";
-@import "utils/verticalrythm";
+@import "base/base";
 @import "utils/utils";
 
 // Base Styles
 @import "base/base";
-@import "base/typography";
 
 // Layout Styles
 @import "layout/footer";
@@ -29,6 +27,6 @@
 @import "pages/index";
 
 // Component Styles
-// Buttons, Navigations, etc.
 @import "components/nav-bar";
 @import "components/sidebar";
+@import "components/cover";

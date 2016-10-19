@@ -1,10 +1,14 @@
-// =============================================================================
-// _base.scss
-// -----------------------------------------------------------------------------
-// Basic Styles for all pages
-// =============================================================================
+// Bitters 1.4.0
+// http://bitters.bourbon.io
+// Copyright 2013-2015 thoughtbot, inc.
+// MIT License
 
-.container {
-  @include outer-container;
-  max-width: $large-screen;
-}
+@import "variables";
+
+@import "buttons";
+@import "forms";
+@import "layout";
+@import "lists";
+@import "media";
+@import "tables";
+@import "typography";

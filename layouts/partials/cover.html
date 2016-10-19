@@ -1,0 +1,13 @@
+<div class="cover">
+  <div class="cover__inner">
+    {{ with .Site.Data.book.title.short }}
+      <h1 class="cover__title">{{ . }}</h1>
+    {{ end }}
+    {{ with .Site.Data.book.title.subtitle }}
+      <h2 class="cover__subtitle">{{ . }}</h2>
+    {{ end }}
+    {{ with .Site.Data.book.author_as_it_appears }}
+      <h3 class="cover__author">{{ . }}</h3>
+    {{ end }}
+  </div>
+</div>

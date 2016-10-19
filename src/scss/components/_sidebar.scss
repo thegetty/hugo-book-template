@@ -1,7 +1,7 @@
 $sliding-panel-position: "left";  // "left" or "right"
 $sliding-panel-width: 20rem;
 $sliding-panel-z-index: 99999;
-$sliding-panel-border-color: $darkgray;
+$sliding-panel-border-color: $dark-gray;
 $sliding-panel-background: shade($action-color, 25%);
 $sliding-panel-color: #fff;
 $sliding-panel-border: 1px solid $sliding-panel-border-color;
@@ -13,10 +13,10 @@ $sliding-panel-fade-screen-bg: #000;
 
 .sidebar {
   @include position(fixed, 0 auto 0 0);
-  @include size(100% 100%);
-  @include transform(translateX(-100%));
-  @include transition(all 0.1s ease-in-out);
+  @include size(fill);
   @include link-color($sliding-panel-color);
+  transform: translateX(-100%);
+  transition: all 0.1s ease-in-out;
 
   background-color: $sliding-panel-background;
   color: $sliding-panel-color;
@@ -33,16 +33,16 @@ $sliding-panel-fade-screen-bg: #000;
 
     // Right oriented by default
     @if $sliding-panel-position == "left" {
-      @include transform(translateX(-$sliding-panel-width));
+      transform: translateX(-$sliding-panel-width);
     } @else {
       @include position(fixed, 0 0 0 auto);
-      @include transform(translateX($sliding-panel-width));
+      transform: translateX($sliding-panel-width);
     }
     @include size($sliding-panel-width 100%);
   }
 
   &.is-visible {
-    @include transform(translateX(0));
+    transform: translateX(0);
   }
 }
 

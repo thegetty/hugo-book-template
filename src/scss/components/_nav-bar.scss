@@ -15,10 +15,12 @@ $nav-bar-font-family: $heading-font-family;
   height: $nav-bar-height;
   justify-content: space-between;
   line-height: $nav-bar-height;
+  position: fixed;
+  width: 100%;
 }
 
 .nav-bar__left {
-  @include flex(1)
+  flex: 1
 }
 
 .nav-bar__center {
