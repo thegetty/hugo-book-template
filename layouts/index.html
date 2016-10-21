@@ -1,9 +1,9 @@
 {{ partial "header.html" . }}
 {{ partial "nav-bar.html" . }}
-{{ partial "sidebar.html" . }}
+{{ partial "sliding-nav-panel.html" . }}
 {{ partial "cover.html" . }}
 
-<div class="container">
+<div class="container home-page-content">
 {{ range .Site.Pages }}
   {{ if eq .Type "index" }} {{ .Content }} {{ end }}
 {{ end }}

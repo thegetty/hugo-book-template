@@ -1,0 +1,40 @@
+/// Full-width block with center-aligned text inside; may contain an image and/or
+/// color-gradient background.
+///
+/// Markup
+///
+/// <div class="cover">
+///   <div class="cover__inner">
+///     <h1 class="cover__title">...</h1>
+///     <h2 class="cover__subtitle">...</h2>
+///     <h3 class="cover__author">...</h3>
+///   </div>
+/// </div>
+
+.cover {
+  $cover-height: 50vh !default;
+  $cover-background-color: $dark-gray !default;
+  $cover-text-color: $white !default;
+
+  background-color: $cover-background-color;
+  color: $cover-text-color;
+  display: flex;
+  flex-flow: column nowrap;
+  height: $cover-height;
+  justify-content: center;
+  text-align: center;
+
+  &__inner {}
+
+  &__title {
+    font-size: modular-scale(5);
+  }
+
+  &__subtitle {
+    font-size: modular-scale(3);
+  }
+
+  &__author {
+    font-size: modular-scale(2);
+  }
+}

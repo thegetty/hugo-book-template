@@ -1,0 +1,17 @@
+<div class="sliding-nav-panel">
+  <div class="sliding-nav-panel__inner">
+    <div class="sliding-nav-panel__inner__header">
+      <h2 class="sliding-nav-panel__title"> {{ .Site.Title }}</h2>
+      <a class="sliding-nav-panel__close-link" href="">
+        <i class="ion-android-close"></i>
+      </a>
+    </div>
+    <div class="sliding-nav-panel__inner__content">
+      <ul class="sliding-nav-panel__inner__content__toc">
+        {{ range where .Site.Pages "Section" "chapters" }}
+          <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</div>

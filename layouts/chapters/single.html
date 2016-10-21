@@ -1,8 +1,8 @@
 {{ partial "header.html" . }}
 {{ partial "nav-bar.html" . }}
-{{ partial "sidebar.html" . }}
+{{ partial "sliding-nav-panel.html" . }}
 
-<div class="container">
+<div class="container chapter">
   <h1>{{ .Title }}</h1>
   {{ .Content }}
   <p><a href="{{ .Site.BaseURL }}">Home</a></p>

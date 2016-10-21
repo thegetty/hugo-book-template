@@ -1,0 +1,101 @@
+/// Sliding panel for important navigation links; can be anchored to left or
+/// right edge of the screen.
+///
+/// Markup
+///  <div class="sliding-nav-panel is-visible">
+///    <div class="sliding-nav-panel__inner">
+///      <div class="sliding-nav-panel__inner__header">
+///        <h2 class="sliding-nav-panel__title"> {{ .Site.Title }}</h2>
+///        <a class="sliding-nav-panel__close-link" href="">
+///          <i class="ion-android-close"></i>
+///        </a>
+///      </div>
+///      <div class="sliding-nav-panel__inner__content">
+///        <ul class="sliding-nav-panel__inner__content__toc">
+///          {{ range where .Site.Pages "Section" "chapters" }}
+///            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+///          {{ end }}
+///        </ul>
+///      </div>
+///    </div>
+///  </div>
+///
+/// .is-visible - Toggle this class to control the visibility state.
+///
+/// Accessibility note: it is strongly recommended to add javascript that
+/// triggers the "is-visible" state when users tab through to this element.
+
+.sliding-nav-panel {
+  $sliding-nav-panel-position: 'left' !default;  // "left" or "right"
+  $sliding-nav-panel-width: 24rem !default;
+  $sliding-nav-panel-z-index: 99999;
+  $sliding-nav-panel-border-color: $dark-gray !default;
+  $sliding-nav-panel-background: shade($action-color, 25%) !default;
+  $sliding-nav-panel-color: #fff !default;
+  $sliding-nav-panel-border: 1px solid $sliding-nav-panel-border-color !default;
+  $sliding-nav-panel-color-hover: #fff !default;
+  $sliding-nav-panel-background-focus: lighten($sliding-nav-panel-background, 5%);
+  $sliding-nav-panel-fade-screen-bg: #000;
+
+  @include position(fixed, 0 auto 0 0);
+  @include link-color($sliding-nav-panel-color);
+
+  background-color: $sliding-nav-panel-background;
+  color: $sliding-nav-panel-color;
+  font-family: $heading-font-family;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+  padding: 1rem;
+  transform: translateX(-100%);
+  transition: all 0.1s ease-in-out;
+  width: 100%;
+  z-index: $sliding-nav-panel-z-index;
+
+  @include media($medium-screen-up) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: $sliding-nav-panel-width;
+
+    // Right oriented by default
+    @if $sliding-nav-panel-position == 'left' {
+      transform: translateX(-$sliding-nav-panel-width);
+    } @else {
+      @include position(fixed, 0 0 0 auto);
+      transform: translateX($sliding-nav-panel-width);
+    }
+  }
+
+  &__inner {
+    flex: 0 1 auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+
+  &__inner__header {
+    margin-top: 2em;
+    @include media($medium-screen-up) { margin-top: 0; }
+  }
+
+  &__inner__content__toc {
+    list-style-type: none;
+    margin: $base-spacing 0;
+    padding: 0;
+
+    li { margin-bottom: 0.5rem; }
+  }
+
+  &__close-link {
+    font-size: 1.5em;
+    position: absolute;
+    right: 1.6rem;
+    top: 0.9rem;
+    @include media($medium-screen-up) { display: none; }
+  }
+
+  &.is-visible {
+    transform: translateX(0);
+  }
+}
+
+

@@ -1,0 +1,55 @@
+// =============================================================================
+// Theme Variables
+// =============================================================================
+// This file contiains site-wide settings that are meant to be modified by the
+// user. New variables can be defined in the "Custom Variables" section at the
+// bottom of this file: they must begin with a "$".
+//
+// In many cases these values can override the defaults specified in the
+// _base.scss file.
+
+// -----------------------------------------------------------------------------
+// Global Theme Settings
+// -----------------------------------------------------------------------------
+$text-column-width: 740px;
+$max-width: 1000px !global;
+
+// Colors
+// $blue
+// ..
+// $action-color
+$base-background-color: #f9f9f9;
+
+// Typography
+$base-font-family: "Merriweather";
+$base-font-weight: 400;
+$base-font-size: 21px;
+$base-line-height: 1.6;
+
+$heading-font-family: "Lato";
+$heading-font-weight: 400;
+$bourbon:("modular-scale-ratio": 1.25);
+
+// -----------------------------------------------------------------------------
+// Component Settings (see the components/ folder for source)
+// -----------------------------------------------------------------------------
+
+// Cover Page
+$cover-height: 50vh;
+$cover-background-color: $dark-gray;
+$cover-text-color: $white;
+
+// Top Nav Bar
+$nav-bar-height: 50px;
+$nav-bar-background: $light-gray;
+$nav-bar-color: $dark-gray;
+$nav-bar-font-family: $heading-font-family;
+$nav-bar-border: 1px solid $medium-gray;
+
+// Sliding Navigation Panel
+// $sliding-nav-panel-position: 'right';
+// $sliding-nav-panel-width: 24rem;
+// $sliding-nav-panel-background: shade($action-color, 25%);
+// $sliding-nav-panel-color: #fff;
+
+

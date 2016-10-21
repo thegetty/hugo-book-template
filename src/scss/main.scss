@@ -5,28 +5,24 @@
 // Only for imports and comments!
 // =============================================================================
 
-// 3rd Party
-@import "vendor/normalize";
-@import "vendor/bourbon/bourbon";
-@import "vendor/neat/neat";
-@import "vendor/ionicons/ionicons";
+// Vendor Styles
+@import 'vendor/normalize';
+@import 'vendor/bourbon/bourbon';
+@import 'vendor/neat/neat';
+@import 'utils/fonts';
+@import 'vendor/ionicons/ionicons';
 
-// 1st Party
-@import "utils/fonts";
-@import "base/base";
-@import "utils/utils";
+// Base Styles and utilities
+@import 'base/base';
+@import 'utils/utils';
 
-// Base Styles
-@import "base/base";
+// Component styles
+@import 'components/components';
 
-// Layout Styles
-@import "layout/footer";
-@import "layout/header";
+// Module Styles
+@import 'modules/modules';
 
-// Page Styles
-@import "pages/index";
+// Page-specific styles
+@import 'pages/index';
+@import 'pages/chapter';
 
-// Component Styles
-@import "components/nav-bar";
-@import "components/sidebar";
-@import "components/cover";

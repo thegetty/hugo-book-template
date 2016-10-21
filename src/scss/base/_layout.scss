@@ -10,5 +10,19 @@ html {
 
 html,
 body {
+  background-color: $base-background-color;
   height: 100%;
 }
+
+.container {
+  @include outer-container;
+  max-width: $text-column-width;
+
+  // When a .nav-bar and a .container share the same space
+  // make sure that container clears it
+  .nav-bar ~ & {
+    position: relative;
+    top: calc(#{$nav-bar-height} + #{$base-spacing});
+  }
+}
+

@@ -1,0 +1,71 @@
+/// Horizontal bar appearing at the top of every page, containing basic
+/// information such as page title, site title, and navigation links.
+
+// scss-lint:disable SelectorFormat
+
+.nav-bar {
+  $nav-bar-icon-size: 24px;
+  $nav-bar-font-family: $heading-font-family !default;
+  $nav-bar-font-size: .9rem !default;
+  $nav-bar-border: $base-border !default;
+  @include link-color($nav-bar-color);
+  background-color: $nav-bar-background;
+  border-bottom: $nav-bar-border;
+  color: $nav-bar-color;
+  display: flex;
+  flex-flow: row nowrap;
+  font-family: $nav-bar-font-family;
+  font-size: $nav-bar-font-size;
+  height: $nav-bar-height;
+  justify-content: space-between;
+  line-height: $nav-bar-height;
+  position: fixed;
+  width: 100%;
+  z-index: $z-index-1;
+
+  &__left {
+    flex: 1;
+  }
+
+  &__center {
+    display: flex;
+    flex: 3 0 auto;
+    justify-content: center;
+    text-align: center;
+
+    &__info {
+      margin: 0 $base-spacing;
+      text-align: center;
+    }
+  }
+
+  &__right {
+    flex: 1;
+    margin-right: $base-spacing;
+    text-align: right;
+  }
+
+  // Icons
+  &__prev-link {
+    @extend .ion-chevron-left;
+    @extend .mobile-hide;
+    font-size: $nav-bar-icon-size * 0.75;
+  }
+
+  &__next-link {
+    @extend .ion-chevron-right;
+    @extend .mobile-hide;
+    font-size: $nav-bar-icon-size * 0.75;
+  }
+
+  &__breadcrumb {
+    @extend .ion-android-arrow-dropright;
+    @extend .mobile-hide;
+    margin: 0 $small-spacing;
+  }
+
+  &__menu__icon {
+    @extend .ion-navicon;
+    font-size: $nav-bar-icon-size * 1.5;
+  }
+}
