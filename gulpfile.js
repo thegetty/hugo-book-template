@@ -1,10 +1,11 @@
-const gulp = require('gulp'),
-    sass = require('gulp-sass'),
-    cssnano = require('gulp-cssnano'),
-    autoprefixer = require('gulp-autoprefixer'),
-    uglify = require('gulp-uglify'),
-    jshint = require('gulp-jshint'),
-    rename = require('gulp-rename')
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var cssnano = require('gulp-cssnano');
+var autoprefixer = require('gulp-autoprefixer');
+var uglify = require('gulp-uglify');
+var jshint = require('gulp-jshint');
+var rename = require('gulp-rename');
+var concat = require('gulp-concat');
 
 const PATH = {
   CSS : {
@@ -12,7 +13,7 @@ const PATH = {
     dest: 'static/css'
   },
   JS: {
-    src: 'src/js/scripts.js',
+    src: ['src/js/!(main)*.js', 'src/js/main.js'],
     dest: 'static/js'
   },
   FONTS: {
@@ -21,29 +22,30 @@ const PATH = {
   }
 };
 
-gulp.task('css', function () {
-    return gulp.src(PATH.CSS.src)
+gulp.task('css', function() {
+  return gulp.src(PATH.CSS.src)
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))
     .pipe(gulp.dest(PATH.CSS.dest))
     .pipe(cssnano())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(PATH.CSS.dest))
+    .pipe(gulp.dest(PATH.CSS.dest));
 });
 
 gulp.task('js',function() {
-  gulp.src(PATH.JS.src)
+  return gulp.src(PATH.JS.src)
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
+    .pipe(concat('all.js'))
     .pipe(gulp.dest(PATH.JS.dest))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest(PATH.JS.dest))
+    .pipe(gulp.dest(PATH.JS.dest));
 });
 
 gulp.task('fonts', function() {
   gulp.src(PATH.FONTS.src)
-    .pipe(gulp.dest(PATH.FONTS.dest))
+    .pipe(gulp.dest(PATH.FONTS.dest));
 });
 
 gulp.task('default', ['css', 'js', 'fonts' ], function () {
